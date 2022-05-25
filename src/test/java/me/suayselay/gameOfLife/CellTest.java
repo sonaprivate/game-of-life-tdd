@@ -75,4 +75,13 @@ public class CellTest {
         Assert.assertEquals(DEAD, cell.getCellState());
     }
 
+    //Any dead cell with exactly two live neighbours becomes a dead cell
+    @Test
+    public void should_be_still_dead_when_dead_cell_has_less_than_three_alive_neighbours() {
+        Cell cell = new Cell(DEAD);
+        int numberOfAliveNeigbours = 2;
+        cell.getCellNextStateHavingAliveNeighbours(numberOfAliveNeigbours);
+        Assert.assertEquals(DEAD, cell.getCellState());
+    }
+
 }
