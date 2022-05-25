@@ -25,7 +25,7 @@ public class Cell {
     }
  
     private boolean canLive(int numberOfAliveNeigbours) {
-        return isReproductionPossible(numberOfAliveNeigbours) || (!isCellHasOverPopulatedORUnderPopulatedNeighbourHood(numberOfAliveNeigbours) && cellSate == ALIVE);
+        return isReproductionPossible(numberOfAliveNeigbours) || (!isCellHasOverPopulatedORUnderPopulatedNeighbourHood(numberOfAliveNeigbours) && cellState == ALIVE);
     }
  
     private boolean isReproductionPossible(int numberOfAliveNeigbours) {
