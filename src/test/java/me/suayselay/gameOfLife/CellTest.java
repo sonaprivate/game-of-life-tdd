@@ -24,7 +24,7 @@ public class CellTest {
     @Test
     public void shouldBeAliveWhenLiveCellHasGreaterThanTwoAliveNeighbors() {
         Cell cell = new Cell(ALIVE);
-        int numberOfAliveNeigbours = 1;
+        int numberOfAliveNeigbours = 2;
         cell.getCellNextStateHavingAliveNeighbours(numberOfAliveNeigbours);
         Assert.assertEquals(ALIVE, cell.getCellState());
     }
