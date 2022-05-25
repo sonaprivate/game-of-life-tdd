@@ -66,4 +66,13 @@ public class CellTest {
  
     }
 
+    //Any Dead cell with more than three live neighbours dies, as if by overpopulation.
+    @Test
+    public void should_be_still_dead_when_dead_cell_has_more_than_three_alive_neighbours() {
+        Cell cell = new Cell(DEAD);
+        int numberOfAliveNeigbours = 4;
+        cell.getCellNextStateHavingAliveNeighbours(numberOfAliveNeigbours);
+        Assert.assertEquals(DEAD, cell.getCellState());
+    }
+
 }
