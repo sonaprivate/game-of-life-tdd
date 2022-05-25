@@ -20,7 +20,7 @@ public class CellTest {
         Assert.assertEquals(DEAD, cell.getCellState());
     }
 
-    // Any live cell with two live neighbours dies, as if by underpopulation
+    // Any live cell with two or three live neighbours lives on to the next generation.
     @Test
     public void shouldBeAliveWhenLiveCellHasGreaterThanTwoAliveNeighbors() {
         Cell cell = new Cell(ALIVE);
@@ -28,5 +28,15 @@ public class CellTest {
         cell.getCellNextStateHavingAliveNeighbours(numberOfAliveNeigbours);
         Assert.assertEquals(ALIVE, cell.getCellState());
     }
+
+    //Any live cell with two or three live neighbours lives on to the next generation.
+    @Test
+    public void shouldBeAliveWhenLiveCellHasExactlyTwoOrThreeAliveNeighbors() {
+        Cell cell = new Cell(ALIVE);
+        int numberOfAliveNeigbours = 3;
+        cell.getCellNextStateHavingAliveNeighbours(numberOfAliveNeigbours);
+        Assert.assertEquals(ALIVE, cell.getCellState());
+    }
+
 
 }
