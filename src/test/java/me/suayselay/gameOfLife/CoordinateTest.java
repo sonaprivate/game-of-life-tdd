@@ -15,7 +15,7 @@ public class CoordinateTest {
     private static final Cell.CellState X = ALIVE;
     private static final Cell.CellState O = DEAD;
 
-    // Check if the cell gets cells correctly or not
+    // Check if the cell gets neighbors correctly or not
     @Test
     public void shouldBeAbleToGetNeighborsForACell() {
         Cell.CellState[][] input = new Cell.CellState[][] {
