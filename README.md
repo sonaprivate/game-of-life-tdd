@@ -24,6 +24,15 @@ By following the rules we wrote test cases for testing coordinates, there includ
 
 # Final result after testing Grid class with GridTest
 
+We have tested several cases if we have implemented the logic correctly or not
+<br>
+- Does 2D array correctly passes to the grid <br>
+- Get all alive cells on the grid <br>
+- Count of alive neighbors for a cell <br>
+- Is next generation working correctly <br>
+- Is there alive cells on the edge of grid <br>
+<br>
+
 ![image](https://user-images.githubusercontent.com/70511142/170470247-799b34ce-64ef-4a09-aada-4a5b9a24c3f6.png)
 
 
