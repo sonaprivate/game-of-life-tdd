@@ -97,4 +97,25 @@ public class GridTest {
         assertArrayEquals(expectedGeneration, nextGeneration.getCellsState());
     }
 
+    @Test
+    public void shouldHaveAliveCellsOnEdge() {
+        Cell.CellState[][] input = new Cell.CellState[][]{
+                {X, O, O, O, O, O, X, X},
+                {O, X, O, O, X, O, X, O},
+                {O, O, O, X, X, O, X, O},
+                {O, X, O, O, O, O, X, O}
+        };
+        Grid grid = new Grid(input);
+ 
+        Cell.CellState[][] expectedGeneration = new Cell.CellState[][]{
+                {O, O, O, O, O, X, X, X},
+                {O, O, O, X, O, O, O, X},
+                {O, O, X, X, X, X, X, X},
+                {O, O, O, X, O, O, X, X}
+        };
+ 
+        Grid nextGeneration = grid.getNextGeneration();
+        assertArrayEquals(expectedGeneration, nextGeneration.getCellsState());
+    }
+
 }
