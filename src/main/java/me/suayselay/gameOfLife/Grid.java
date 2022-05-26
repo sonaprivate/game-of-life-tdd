@@ -13,4 +13,16 @@ public class Grid {
             }
         }
     }
+
+    // Get Cell state
+    public Cell.CellState[][] getCellsState() {
+        Cell.CellState[][] cellStates = new Cell.CellState[cells.length][];
+        for (int row = 0; row < cells.length; row++) {
+            cellStates[row] = new Cell.CellState[cells[row].length];
+            for (int col = 0; col < cells[row].length; col++) {
+                cellStates[row][col] = cells[row][col].getCellState();
+            }
+        }
+        return cellStates;
+    }
 }
