@@ -45,4 +45,33 @@ public class GridTest {
         assertEquals(expectedNumberOfAliveCells, actualAliveCells);
     }
 
+    // this testing method checks if method works correctly when counting alive
+    // neighbors for a specific cell
+    @Test
+    public void shouldBeAbleToCountNumberOfAliveNeighborsForACell() {
+        Cell.CellState[][] input = new Cell.CellState[][] {
+                { O, O, O, O, O, O, O, O },
+                { O, O, X, O, X, O, O, O },
+                { O, O, X, X, X, O, O, O },
+                { O, O, O, O, O, O, O, O }
+        };
+
+        Grid grid = new Grid(input);
+        // neighbours for (1,3)
+        List<Coordinate> neighbours = new ArrayList<>();
+        neighbours.add(new Coordinate(0, 2));
+        neighbours.add(new Coordinate(0, 3));
+        neighbours.add(new Coordinate(0, 4));
+        neighbours.add(new Coordinate(1, 2));
+        neighbours.add(new Coordinate(1, 4));
+        neighbours.add(new Coordinate(2, 2));
+        neighbours.add(new Coordinate(2, 3));
+        neighbours.add(new Coordinate(2, 4));
+
+        int expectedNumberOfAliveNeigbours = 5;
+
+        int aliveCountOf = grid.getAliveCountOf(neighbours);
+        Assert.assertEquals(expectedNumberOfAliveNeigbours, aliveCountOf);
+    }
+
 }
