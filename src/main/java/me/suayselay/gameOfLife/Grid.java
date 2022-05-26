@@ -1,5 +1,9 @@
 package me.suayselay.gameOfLife;
 
+import static me.suayselay.gameOfLife.Cell.CellState.ALIVE;;
+
+import java.util.List;
+
 public class Grid {
     private Cell[][] cells;
 
@@ -34,5 +38,29 @@ public class Grid {
         return cells;
     }
 
-    
+    public int getAliveCount() {
+        int count = 0;
+        for (int row = 0; row < getStateSize(); row++) {
+            for (int col = 0; col < cells[row].length; col++) {
+                if (isCellAlive(cells[row][col])) {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+ 
+    private boolean isCellAlive(Cell cell) {
+        return cell.getCellState() == ALIVE;
+    }
+ 
+    public int getAliveCountOf(List<Coordinate> neighbours) {
+        int count = 0;
+        for (Coordinate coordinate : neighbours) {
+            if (isCellAlive(cells[coordinate.getRow()][coordinate.getCol()])) {
+                count++;
+            }
+        }
+        return count;
+    }
 }
