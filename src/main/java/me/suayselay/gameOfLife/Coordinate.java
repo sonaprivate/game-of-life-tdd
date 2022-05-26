@@ -39,4 +39,8 @@ public class Coordinate {
         }
     }
     
+    // Check if matrix out of bounds
+    private boolean isNotOutOfMatrix(int lastRowIndex, int lastColumnIndex, int newRow, int newCol) {
+        return (newRow > -1 && newCol > -1) && (newRow <= lastRowIndex && newCol <= lastColumnIndex);
+    }
 }
