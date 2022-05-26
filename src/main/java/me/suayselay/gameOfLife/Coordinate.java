@@ -48,4 +48,22 @@ public class Coordinate {
     private boolean isNotTheSameCell(int xOffset, int yOffset) {
         return xOffset != 0 || yOffset != 0;
     }
+
+    // overriding other useful methods
+    @Override
+    public int hashCode() {
+        int result;
+        result = row / 11;
+        return result;
+    }
+ 
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+ 
+        Coordinate that = (Coordinate) obj;
+ 
+        return row == that.row && col == that.col;
+    }
 }
