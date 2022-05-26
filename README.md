@@ -40,5 +40,8 @@ The next generation will be wrote to ```output.txt``` file
 ![image](https://user-images.githubusercontent.com/70511142/170475902-8f91d5eb-5681-4531-b7c0-9592a9114127.png)
 
 
-
+# Development tools and libraries
+- ```Lombok``` is used for easy generating getters and setters
+- ```JUnit``` is used for testing the project
+- ```Maven``` is used for building the project
 
