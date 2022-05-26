@@ -18,11 +18,11 @@ public class CoordinateTest {
     // Check if the cell gets cells correctly or not
     @Test
     public void shouldBeAbleToGetNeighborsForACell() {
-        Cell.CellState[][] input = new Cell.CellState[][]{
-                {O, O, O, O, O, O, O, O},
-                {O, O, O, O, X, O, O, O},
-                {O, O, O, X, X, O, O, O},
-                {O, O, O, O, O, O, O, O}
+        Cell.CellState[][] input = new Cell.CellState[][] {
+                { O, O, O, O, O, O, O, O },
+                { O, O, O, O, X, O, O, O },
+                { O, O, O, X, X, O, O, O },
+                { O, O, O, O, O, O, O, O }
         };
 
         Grid grid = new Grid(input);
@@ -45,5 +45,26 @@ public class CoordinateTest {
         assertTrue(expectedNeigbours.contains(new Coordinate(2, 3)));
         assertTrue(expectedNeigbours.contains(new Coordinate(2, 4)));
     }
-    
+
+    @Test
+    public void shouldBeAbleToGetNeighborsForTheFirstCell() {
+        Cell.CellState[][] input = new Cell.CellState[][] {
+                { O, O, O, O, O, O, O, O },
+                { O, O, O, O, X, O, O, O },
+                { O, O, O, X, X, O, O, O },
+                { O, O, O, O, O, O, O, O }
+        };
+
+        Grid grid = new Grid(input);
+        List<Coordinate> expectedNeigbours = new ArrayList<>();
+        expectedNeigbours.add(new Coordinate(0, 1));
+        expectedNeigbours.add(new Coordinate(1, 0));
+        expectedNeigbours.add(new Coordinate(1, 1));
+ 
+        List<Coordinate> actualNeighbours = new Coordinate(0, 0).getNeighbours(grid);
+        assertEquals(expectedNeigbours.size(), actualNeighbours.size());
+        assertTrue(expectedNeigbours.contains(new Coordinate(0, 1)));
+        assertTrue(expectedNeigbours.contains(new Coordinate(1, 0)));
+        assertTrue(expectedNeigbours.contains(new Coordinate(1, 1)));
+    }
 }
