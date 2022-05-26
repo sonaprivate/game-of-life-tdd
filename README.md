@@ -35,5 +35,10 @@ We have tested several cases if we have implemented the logic correctly or not
 
 ![image](https://user-images.githubusercontent.com/70511142/170470247-799b34ce-64ef-4a09-aada-4a5b9a24c3f6.png)
 
+# After completing testing the project we can visualize our game as follow
+The next generation will be wrote to ```output.txt``` file
+![image](https://user-images.githubusercontent.com/70511142/170475902-8f91d5eb-5681-4531-b7c0-9592a9114127.png)
+
+
 
 
