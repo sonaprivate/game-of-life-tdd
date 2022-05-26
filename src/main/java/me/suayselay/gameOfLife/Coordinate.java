@@ -43,4 +43,9 @@ public class Coordinate {
     private boolean isNotOutOfMatrix(int lastRowIndex, int lastColumnIndex, int newRow, int newCol) {
         return (newRow > -1 && newCol > -1) && (newRow <= lastRowIndex && newCol <= lastColumnIndex);
     }
+
+    // is entered cell coordinate is different than the original cell
+    private boolean isNotTheSameCell(int xOffset, int yOffset) {
+        return xOffset != 0 || yOffset != 0;
+    }
 }
