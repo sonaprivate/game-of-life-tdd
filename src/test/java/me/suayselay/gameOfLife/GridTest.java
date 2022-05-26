@@ -88,7 +88,7 @@ public class GridTest {
  
         Cell.CellState[][] expectedGeneration = new Cell.CellState[][]{
                 {O, O, O, O, O, O, O, O},
-                {O, O, O, O, X, O, O, O},
+                {O, O, O, X, X, O, O, O},
                 {O, O, O, X, X, O, O, O},
                 {O, O, O, O, O, O, O, O}
         };
