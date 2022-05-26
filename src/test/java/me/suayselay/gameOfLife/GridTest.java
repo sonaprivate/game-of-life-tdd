@@ -74,4 +74,27 @@ public class GridTest {
         Assert.assertEquals(expectedNumberOfAliveNeigbours, aliveCountOf);
     }
 
+    // Writing test method for checking if it get correctly the next generation
+    @Test
+    public void shouldBeAbleToGetNextGeneration() {
+        Cell.CellState[][] input = new Cell.CellState[][]{
+                {O, O, O, O, O, O, O, O},
+                {O, O, O, O, X, O, O, O},
+                {O, O, O, X, X, O, O, O},
+                {O, O, O, O, O, O, O, O}
+        };
+
+        Grid grid = new Grid(input);
+ 
+        Cell.CellState[][] expectedGeneration = new Cell.CellState[][]{
+                {O, O, O, O, O, O, O, O},
+                {O, O, O, O, X, O, O, O},
+                {O, O, O, X, X, O, O, O},
+                {O, O, O, O, O, O, O, O}
+        };
+ 
+        Grid nextGeneration = grid.getNextGeneration();
+        assertArrayEquals(expectedGeneration, nextGeneration.getCellsState());
+    }
+
 }
