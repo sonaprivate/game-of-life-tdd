@@ -60,11 +60,33 @@ public class CoordinateTest {
         expectedNeigbours.add(new Coordinate(0, 1));
         expectedNeigbours.add(new Coordinate(1, 0));
         expectedNeigbours.add(new Coordinate(1, 1));
- 
+
         List<Coordinate> actualNeighbours = new Coordinate(0, 0).getNeighbours(grid);
         assertEquals(expectedNeigbours.size(), actualNeighbours.size());
         assertTrue(expectedNeigbours.contains(new Coordinate(0, 1)));
         assertTrue(expectedNeigbours.contains(new Coordinate(1, 0)));
         assertTrue(expectedNeigbours.contains(new Coordinate(1, 1)));
+    }
+
+    @Test
+    public void shouldBeAbleToGetNeighborsForTheLastCell() {
+        Cell.CellState[][] input = new Cell.CellState[][] {
+                { O, O, O, O, O, O, O, O },
+                { O, O, O, O, X, O, O, O },
+                { O, O, O, X, X, O, O, O },
+                { O, O, O, O, O, O, O, O }
+        };
+
+        Grid grid = new Grid(input);
+        List<Coordinate> expectedNeigbours = new ArrayList<>();
+        expectedNeigbours.add(new Coordinate(2, 7));
+        expectedNeigbours.add(new Coordinate(2, 6));
+        expectedNeigbours.add(new Coordinate(3, 6));
+
+        List<Coordinate> actualNeighbours = new Coordinate(3, 7).getNeighbours(grid);
+        assertEquals(expectedNeigbours.size(), actualNeighbours.size());
+        assertTrue(expectedNeigbours.contains(new Coordinate(2, 7)));
+        assertTrue(expectedNeigbours.contains(new Coordinate(2, 6)));
+        assertTrue(expectedNeigbours.contains(new Coordinate(3, 6)));
     }
 }
