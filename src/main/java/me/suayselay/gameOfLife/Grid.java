@@ -25,4 +25,14 @@ public class Grid {
         }
         return cellStates;
     }
+
+    public int getStateSize() {
+        return cells.length;
+    }
+ 
+    public Cell[][] getCells() {
+        return cells;
+    }
+
+    
 }
